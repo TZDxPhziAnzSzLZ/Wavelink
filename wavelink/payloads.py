@@ -395,12 +395,15 @@ class VoiceStatePayload:
         The Discord voice endpoint connected to. Could be ``None``.
     session_id: str | None
         The Discord voice session ID autheticated with. Could be ``None``.
+    channel_id: str | None
+        The specific Discord voice channel ID.
     """
 
     def __init__(self, data: VoiceStateResponse) -> None:
         self.token: str | None = data.get("token")
         self.endpoint: str | None = data.get("endpoint")
         self.session_id: str | None = data.get("sessionId")
+        self.channel_id: str | None = data.get("channelId")
 
 
 class PlayerResponsePayload:
